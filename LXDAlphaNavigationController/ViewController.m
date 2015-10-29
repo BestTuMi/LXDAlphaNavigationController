@@ -7,8 +7,13 @@
 //
 
 #import "ViewController.h"
+#import "LXDAlphaNavController.h"
 
 @interface ViewController ()
+
+@property (strong, nonatomic) IBOutlet UISlider *red;
+@property (strong, nonatomic) IBOutlet UISlider *green;
+@property (strong, nonatomic) IBOutlet UISlider *blue;
 
 @end
 
@@ -16,12 +21,32 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    NSLog(@"%@", self.navigationController.class);
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
+
+
+#pragma mark - event
+- (IBAction)rgbChange:(UISlider *)sender
+{
+    [self alphaNavController].barColor = [UIColor colorWithRed: _red.value/255.f green: _green.value/255.f blue: _blue.value/255.f alpha: 1.f];
+}
+
+
+- (IBAction)alphaChange:(UISlider *)sender
+{
+    [self alphaNavController].barAlpha = sender.value;
+}
+
+
+#pragma mark - getter
+- (LXDAlphaNavController *)alphaNavController
+{
+    return (LXDAlphaNavController *)self.navigationController;
+}
+
 
 @end

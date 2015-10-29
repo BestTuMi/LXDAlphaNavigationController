@@ -15,6 +15,8 @@
 		EFE4C2FD1BE1ACF000BEF29B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFE4C2FB1BE1ACF000BEF29B /* LaunchScreen.storyboard */; };
 		EFE4C3081BE1ACF000BEF29B /* LXDAlphaNavigationControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EFE4C3071BE1ACF000BEF29B /* LXDAlphaNavigationControllerTests.m */; };
 		EFE4C3131BE1ACF000BEF29B /* LXDAlphaNavigationControllerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = EFE4C3121BE1ACF000BEF29B /* LXDAlphaNavigationControllerUITests.m */; };
+		EFE4C3231BE1AD2B00BEF29B /* LXDAlphaNavController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFE4C3221BE1AD2B00BEF29B /* LXDAlphaNavController.m */; settings = {ASSET_TAGS = (); }; };
+		EFE4C3251BE1AD4800BEF29B /* bigShadow.png in Resources */ = {isa = PBXBuildFile; fileRef = EFE4C3241BE1AD4800BEF29B /* bigShadow.png */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,9 @@
 		EFE4C30E1BE1ACF000BEF29B /* LXDAlphaNavigationControllerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LXDAlphaNavigationControllerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFE4C3121BE1ACF000BEF29B /* LXDAlphaNavigationControllerUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXDAlphaNavigationControllerUITests.m; sourceTree = "<group>"; };
 		EFE4C3141BE1ACF000BEF29B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EFE4C3211BE1AD2B00BEF29B /* LXDAlphaNavController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXDAlphaNavController.h; sourceTree = "<group>"; };
+		EFE4C3221BE1AD2B00BEF29B /* LXDAlphaNavController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXDAlphaNavController.m; sourceTree = "<group>"; };
+		EFE4C3241BE1AD4800BEF29B /* bigShadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bigShadow.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +106,7 @@
 		EFE4C2EC1BE1ACF000BEF29B /* LXDAlphaNavigationController */ = {
 			isa = PBXGroup;
 			children = (
+				EFE4C3201BE1AD0F00BEF29B /* alphaNav */,
 				EFE4C2F01BE1ACF000BEF29B /* AppDelegate.h */,
 				EFE4C2F11BE1ACF000BEF29B /* AppDelegate.m */,
 				EFE4C2F31BE1ACF000BEF29B /* ViewController.h */,
@@ -138,6 +144,16 @@
 				EFE4C3141BE1ACF000BEF29B /* Info.plist */,
 			);
 			path = LXDAlphaNavigationControllerUITests;
+			sourceTree = "<group>";
+		};
+		EFE4C3201BE1AD0F00BEF29B /* alphaNav */ = {
+			isa = PBXGroup;
+			children = (
+				EFE4C3241BE1AD4800BEF29B /* bigShadow.png */,
+				EFE4C3211BE1AD2B00BEF29B /* LXDAlphaNavController.h */,
+				EFE4C3221BE1AD2B00BEF29B /* LXDAlphaNavController.m */,
+			);
+			path = alphaNav;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -243,6 +259,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFE4C3251BE1AD4800BEF29B /* bigShadow.png in Resources */,
 				EFE4C2FD1BE1ACF000BEF29B /* LaunchScreen.storyboard in Resources */,
 				EFE4C2FA1BE1ACF000BEF29B /* Assets.xcassets in Resources */,
 				EFE4C2F81BE1ACF000BEF29B /* Main.storyboard in Resources */,
@@ -271,6 +288,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EFE4C2F51BE1ACF000BEF29B /* ViewController.m in Sources */,
+				EFE4C3231BE1AD2B00BEF29B /* LXDAlphaNavController.m in Sources */,
 				EFE4C2F21BE1ACF000BEF29B /* AppDelegate.m in Sources */,
 				EFE4C2EF1BE1ACF000BEF29B /* main.m in Sources */,
 			);
