@@ -11,17 +11,14 @@
 
 @interface ViewController ()
 
-@property (strong, nonatomic) IBOutlet UISlider *red;
-@property (strong, nonatomic) IBOutlet UISlider *green;
-@property (strong, nonatomic) IBOutlet UISlider *blue;
-
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSLog(@"%@", self.navigationController.class);
+    [self alphaNavController].barAlpha = 0.f;
+    [self.tableView addObserver: self forKeyPath: @"contentOffset" options: NSKeyValueObservingOptionNew context: nil];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -29,23 +26,20 @@
 }
 
 
-#pragma mark - event
-- (IBAction)rgbChange:(UISlider *)sender
-{
-    [self alphaNavController].barColor = [UIColor colorWithRed: _red.value/255.f green: _green.value/255.f blue: _blue.value/255.f alpha: 1.f];
-}
-
-
-- (IBAction)alphaChange:(UISlider *)sender
-{
-    [self alphaNavController].barAlpha = sender.value;
-}
-
-
 #pragma mark - getter
 - (LXDAlphaNavController *)alphaNavController
 {
     return (LXDAlphaNavController *)self.navigationController;
+}
+
+
+#pragma mark - observe
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context
+{
+    CGFloat offset = self.tableView.contentOffset.y;
+    CGFloat delta = offset / 64.f + 1.f;
+    delta = MAX(0, delta);
+    [self alphaNavController].barAlpha = MIN(1, delta);
 }
 
 
